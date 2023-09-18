@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 
 function Todo() {
   const [item, setItem] = useState("");
   const [todo, setTodo] = useState([]);
   const submitFunction = () => {
     if (item && item != null) {
-      var itemTodo = {}; //new Object()
-      itemTodo.task = item;
-      itemTodo.status = false;
-      setTodo((todo) => [...todo, itemTodo]);
-      setItem("");
+      setTodo((todo) => [...todo, item]);
+      console.log(item);
+      alert("created ^^");
     }
   };
-  console.log(todo);
 
   return (
     <div>
@@ -24,7 +21,7 @@ function Todo() {
           <input
             type="text"
             className="form-control"
-            placeholder="task.."
+            placeholder="task"
             value={item}
             onChange={(e) => setItem(e.target.value)}
           />
@@ -41,7 +38,5 @@ function Todo() {
     </div>
   );
 }
-
-
 
 export default Todo;

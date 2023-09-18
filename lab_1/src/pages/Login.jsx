@@ -1,25 +1,26 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 
 function Login() {
   const [email, setEmail] = useState("");
   const submitLogin = () => {
     if (email && email != null) {
-        var data = new URLSearchParams();
-        data.append('email',email);
-        fetch('https://students.trungthanhweb.com/api/checkLoginhtml',{
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: data
-        }).then(response => response.json())
-            .then((data) => {
-                console.log(data);
-            })
+      var data = new URLSearchParams();
+      data.append("email", email);
+      fetch("https://students.trungthanhweb.com/api/checkLoginhtml", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: data,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
     }
   };
-  console.log(Login);
+  // console.log(Login);
 
   return (
     <div>

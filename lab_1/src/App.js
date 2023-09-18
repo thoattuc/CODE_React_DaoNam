@@ -2,8 +2,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
-import Todo from "./components/Todo";
-import Login from "./components/Login";
+import Todo from "./pages/Todo";
+import Login from "./pages/Login";
 
 
 function App() {
